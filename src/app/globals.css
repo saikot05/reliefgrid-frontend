@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* ── Design System Color Tokens (DESIGN_SYSTEM.md) ── */
+  --color-navy:         #263746;
+  --color-navy-dark:    #202B35;
+  --color-bg:           #F5F6F4;
+  --color-surface:      #FFFFFF;
+  --color-text:         #263746;
+  --color-text-muted:   #64748B;
+  --color-border:       #DCE1E5;
+  --color-emergency:    #B9473E;
+  --color-warning:      #D49A37;
+  --color-success:      #398263;
+  --color-info:         #527FA3;
+
+  /* ── Semantic aliases ── */
+  --color-background:   var(--color-bg);
+  --color-foreground:   var(--color-text);
+
+  /* ── Typography ── */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ── Base styles ── */
+:root {
+  --background: #F5F6F4;
+  --foreground: #263746;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #121A21;
+    --foreground: #F5F6F4;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Glassmorphism utility — use sparingly per DESIGN_SYSTEM.md ── */
+.glass {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(220, 225, 229, 0.6);
+}
+
+@media (prefers-color-scheme: dark) {
+  .glass {
+    background: rgba(32, 43, 53, 0.80);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+}
